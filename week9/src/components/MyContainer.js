@@ -15,7 +15,7 @@ const MyContainer = () => {
         let count = items.length +1;
 
         items.push({
-            id: String(count), text: text
+            id: String(count), text: text, clicked: false
         })
         setText("");
         setItems(items);
@@ -25,9 +25,13 @@ const MyContainer = () => {
 
     const onPress = (e) =>{
         setItems(items.map((item=>{
-            if (item.id === e){
+            if (item.id === e && item.clicked === false){
                 return {id: item.id, text: item.text, clicked: true};
-            }else{
+            }
+            if(item.id === e && item.clicked === true){
+                return {id: item.id, text: item.text, clicked: false};
+            }
+            else{
                 return item
             }
                 
