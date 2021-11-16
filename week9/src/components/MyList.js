@@ -7,7 +7,7 @@ const MyList = ({updateItem, header, items}) => {
             <ol>
                 {items.map((item) => (
                     <li key ={items.id} onClick ={() => updateItem(item.id)}>
-                        <p className ={item.clicked ? "clicked" : ""}>{item.text}</p>
+                        <p style={{textDecoration: item.clicked ? "line-through":""}}>{item.text}</p>
                     </li>
                 ))}
             </ol>
