@@ -28,9 +28,9 @@ const MyContainer = () => {
             if (item.id === e && item.clicked === false){
                 return {id: item.id, text: item.text, clicked: true};
             }
-            if(item.id === e && item.clicked === true){
+            /*if(item.id === e && item.clicked === true){
                 return {id: item.id, text: item.text, clicked: false};
-            }
+            }*/
             else{
                 return item
             }
