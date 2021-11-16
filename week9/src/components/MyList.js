@@ -1,12 +1,14 @@
-import Text from "./Text"
 
-const MyList = ({header, items}) => {
+
+const MyList = ({updateItem, header, items}) => {
     return (
         <div>
             <h1>{header}</h1>
             <ol>
-                {items.map((text) => (
-                    <Text key={text.id} text={text.text}/>
+                {items.map((item) => (
+                    <li key ={items.id} onClick ={() => updateItem(item.id)}>
+                        <p>{item.text}</p>
+                    </li>
                 ))}
             </ol>
         </div>

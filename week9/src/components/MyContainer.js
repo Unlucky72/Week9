@@ -4,8 +4,8 @@ import {useState} from "react"
 
 const MyContainer = () => {
     const [items, setItems] = useState([
-        {id: "1", text: "This is an item"},
-        {id: "2", text: "Also this"},
+        {id: "1", text: "This is an item", clicked: false},
+        {id: "2", text: "Also this", clicked: false},
     ]);
     const[text, setText] = useState("");
 
@@ -23,9 +23,21 @@ const MyContainer = () => {
 
     }
 
+    const onPress = (e) =>{
+        setItems(items.map((item=>{
+            if (item.id === e){
+                return {id: item.id, text: item.text, clicked: true};
+            }else{
+                return item
+            }
+                
+        })));
+    }
+
     return (
         <div>
             <MyList 
+                updateItem =  {onPress}
                 header = "Really epic list component"
                 items = {items}
             />
